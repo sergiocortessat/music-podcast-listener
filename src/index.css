@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* select all elements and apply a height of 100vh */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 245, 164;
+  --background-end-rgb: 0, 0, 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(4, 94, 64);
+  height: 100vh;
+  background: linear-gradient(
+    20deg,
+    rgba(4, 94, 64, 1) 0%,
+    rgba(21, 21, 21, 1) 42%,
+    rgba(63, 65, 65, 1) 83%
+  );
+}
