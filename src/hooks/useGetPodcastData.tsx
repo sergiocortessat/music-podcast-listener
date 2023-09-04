@@ -1,6 +1,9 @@
 import { getTopPodcasts } from "../services/api";
 import useSWR from "swr";
-import { dynamicUpdateLocalStorage, getFromLocalStorage } from "../helpers/storage";
+import {
+  dynamicUpdateLocalStorage,
+  getFromLocalStorage,
+} from "../helpers/storage";
 import { PodcastData } from "../types/podcastTop";
 
 export const useGetPodcastData = (): PodcastData => {
@@ -17,16 +20,18 @@ export const useGetPodcastData = (): PodcastData => {
     isLoading,
   } = useSWR("/us/rss/toppodcasts/limit=100/genre=1310/json", fetcher, {
     fallbackData: initialData,
+    onError: (error) => {
+      console.log(`Cant fetch top podcast data. Error: ${error}`);
+    },
   });
   if (podcastTop && shouldFetch) {
     dynamicUpdateLocalStorage({
-        shouldFetch: shouldFetch,
-        primaryStorageKey: "podcastTop",
-        lastFetchedKey: "lastFetched",
-        data: podcastTop,
-        currentTimestamp: new Date().toString()
-      });
-      
+      shouldFetch: shouldFetch,
+      primaryStorageKey: "podcastTop",
+      lastFetchedKey: "lastFetched",
+      data: podcastTop,
+      currentTimestamp: new Date().toString(),
+    });
   }
   return { podcastTop, error, isLoading };
 };

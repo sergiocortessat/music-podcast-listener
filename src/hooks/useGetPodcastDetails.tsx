@@ -1,7 +1,10 @@
 import { useParams } from "react-router-dom";
 import { getPodcastDetails } from "../services/api";
 import useSWR from "swr";
-import { dynamicUpdateLocalStorage, getFromLocalStorage } from "../helpers/storage";
+import {
+  dynamicUpdateLocalStorage,
+  getFromLocalStorage,
+} from "../helpers/storage";
 import { UsePodcastDetailsHook } from "../types/podcastDetail";
 
 const useGetPodcastDetails = (): UsePodcastDetailsHook => {
@@ -20,18 +23,22 @@ const useGetPodcastDetails = (): UsePodcastDetailsHook => {
     data: podcastInfo,
     error,
     isLoading,
-  } = useSWR(podcastId, fetcher, { fallbackData: initialData });
+  } = useSWR(podcastId, fetcher, {
+    fallbackData: initialData,
+    onError: (error) => {
+      console.log(`Cant fetch podcast details. Error: ${error}`);
+    },
+  });
   if (podcastInfo && shouldFetch) {
     dynamicUpdateLocalStorage({
-        shouldFetch: shouldFetch,
-        shouldDeleteOldEntries: true,
-        limit: 30, // Optional, defaults to 30 if not provided
-        primaryStorageKey: "allPodcastDetails",
-        lastFetchedKey: podcastId,
-        data: podcastInfo,
-        currentTimestamp: currentTimestamp
-      });
-      
+      shouldFetch: shouldFetch,
+      shouldDeleteOldEntries: true,
+      limit: 30, // Optional, defaults to 30 if not provided
+      primaryStorageKey: "allPodcastDetails",
+      lastFetchedKey: podcastId,
+      data: podcastInfo,
+      currentTimestamp: currentTimestamp,
+    });
   }
   return { podcastInfo, error, isLoading, podcastId };
 };
