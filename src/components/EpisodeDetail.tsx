@@ -41,9 +41,9 @@ const EpisodeDetails: React.FC = () => {
     }
   };
   return (
-    <div className="flex flex-col songs-list w-4/6 my-5 mx-20 card-custom">
-      <div className="relative  p-8 w-player flex flex-col rounded-xl shadow-player-light bg-player-light-background border border-player-light-border dark:shadow-player-dark dark:bg-player-dark-background dark:border-player-dark-border dark:backdrop-blur-xl">
-        <div className="px-10 pt-10 pb-4 flex items-center z-50 mb-5">
+    <div className="flex sm:flex-col songs-list sm:w-4/6 w-4/5 my-5 mx-20 card-custom">
+      <div className="relative w-full p-8 w-player flex flex-col rounded-xl shadow-player-light bg-player-light-background border border-player-light-border dark:shadow-player-dark dark:bg-player-dark-background dark:border-player-dark-border dark:backdrop-blur-xl">
+        <div className="px-10 pt-10 pb-4 flex items-center z-50 mb-5 sm:flex-row sm:gap-0 flex-col gap-5">
           <img
             data-amplitude-song-info="cover_art_url"
             className="w-24 h-24 rounded-md mr-6 border border-bg-player-light-background dark:border-cover-dark-border"
@@ -70,10 +70,10 @@ const EpisodeDetails: React.FC = () => {
             </span>
           </div>
         </div>
-        <div className="w-full flex flex-col px-16 pb-6 z-50 h-24 overflow-y-auto scroll-smooth mb-5">
+        <div className="w-full flex flex-col sm:px-16 pb-6 z-50 h-24 overflow-y-auto scroll-smooth mb-5 text-sm sm:text-lg">
           {description}
         </div>
-        <div className="h-control-panel p-5 rounded-b-xl bg-control-panel-light-background border-t border-gray-200 flex items-center justify-center gap-5 z-50 dark:bg-control-panel-dark-background dark:border-gray-900">
+        <div className="h-control-panel p-5 rounded-b-xl bg-control-panel-light-background border-t border-gray-200 flex flex-col sm:flex-row items-center justify-center gap-5 z-50 dark:bg-control-panel-dark-background dark:border-gray-900">
           <audio
             ref={audioRef}
             id="podcastID"
