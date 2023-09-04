@@ -2,7 +2,7 @@ import React from "react";
 import useGetPodcastDetails from "../hooks/useGetPodcastDetails";
 import { Outlet } from "react-router-dom";
 import Loader from "../Loader";
-import SideCard from "./SideCard";
+import SideCard from "../components/SideCard";
 
 const PodCastDetails: React.FC = () => {
   const { podcastInfo, error, isLoading, podcastId } = useGetPodcastDetails();

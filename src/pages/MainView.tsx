@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import SearchInput from './SearchInput';
-import PodcastCard from "./PodcastCard";
+import SearchInput from '../components/SearchInput';
+import PodcastCard from "../components/PodcastCard";
 import { useGetPodcastData } from "../hooks/useGetPodcastData";
 import useFilteredPodcasts from '../hooks/useFilteredPodcast'; // Import the hook
 import Loader from '../Loader';

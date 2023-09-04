@@ -8,14 +8,12 @@ export const baseUrl = axios.create({
 
 export const getTopPodcasts = async (url: string): Promise<PodcastTop> => {
   const response = await baseUrl.get(url);
-  console.log("response", response.data.feed, "response");
   return response.data.feed;
 };
 
 export const getPodcastDetails = async (
   podcastId: string
 ): Promise<PodcastInfo> => {
-  console.log("podcastId", podcastId, "podcastId");
   const responseTrackInfo = await axios.get(
     `https://api.allorigins.win/get?url=${encodeURIComponent(
       `https://itunes.apple.com/lookup?id=${podcastId}&media=podcast&entity=podcastEpisode&limit=100`

@@ -1,6 +1,6 @@
 // routes.tsx
-import MainView from '../components/MainView';
-import PodcastDetail from '../components/PodcastDetail';
+import MainView from '../pages/MainView';
+import PodcastDetail from '../pages/PodcastDetail';
 import EpisodeDetail from '../components/EpisodeDetail';
 import TrackList from '../components/TrackList';
 import { createBrowserRouter } from 'react-router-dom';
