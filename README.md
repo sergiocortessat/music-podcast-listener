@@ -1,27 +1,92 @@
-# React + TypeScript + Vite
+# ETH Balance Checker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of Contents
+  <br />
 
-Currently, two official plugins are available:
+* [About the Project](#about-the-project)
+* [Built With](#built-with)
+* [Contributing](#contributing)
+* [Contact](#authors)
+* [Acknowledgements](#acknowledgements) 
+* [Getting Started](#getting-started) 
+* [Live Demo and Video](#live-version) 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#
+<br />
 
-## Expanding the ESLint configuration
+![React](https://img.shields.io/badge/React-3776AB?style=for-the-badge&logo=react&logoColor=white) <br/>
+![Typescript](https://img.shields.io/badge/TypeScript-092E20?style=for-the-badge&logo=typescript&logoColor=white) <br/>
+![Tailwind](https://img.shields.io/badge/Tailwind-092E20?style=for-the-badge&logo=tailwind&logoColor=white) <br/>
+![SWR](https://img.shields.io/badge/SWR-092E20?style=for-the-badge&logo=swr&logoColor=white) <br/>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+<br />
+
+### Built With
+
+* [REACT-VERCEL] [TYPESCRIPT] [WEBPACK] [JAVASCRIPT] [TAILWIND] [API] [SWR]
+
+## Live Version
+
+* [Live Demo](https://music-podcast-listener.vercel.app/) 
+
+<!-- ABOUT THE PROJECT   -->
+## About The Project
+The Podcast app allows you to fetch the top 100 top podcast form itunes, As such you can select any of these and listen to their podcast
+
+## Screenshot Test
+
+<p align="center">
+  <img height="auto" src="Screenshot.png">
+</p>
+
+
+
+## Contributing
+
+Contributions make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+## Prerequisites
+
+Terminal or similar to execute the program.
+
+
+## Getting Started
+
+
+## Clone project
+
+- To get a local copy up and running follow these simple example steps.
+- Clone this repository with git clone ```https://github.com/sergiocortessat/music-podcast-listener``` using your terminal or command line.
+- Change to the project directory by entering: ```cd music-podcast-listener``` in the terminal.
+- Enter the project folder and set the repo with its correspondent using npm install.
+- After this run the command npx run start
+- If the project cant be build, please run npx webpack.
+
+## Command line steps
+```
+- $ git clone `$ git clone https://github.com/sergiocortessat/music-podcast-listener
+- $ cd music-podcast-listener
+- $npm i
+- $ npm run dev
+- ##(If project doesn't build, please run): $ npx webpack
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Authors
+
+👤 Sergio Cortes Satizabal
+
+- Github: [@sergiocortessat](https://github.com/sergiocortessat)
+- Twitter: [@sergiocortessat](https://twitter.com/sergiocortessat)
+- LinkedIn: [@sergiocortessat](https://www.linkedin.com/in/sergio-cortes-satizabal-3b452194/)
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+
+
+## 📝 License
+
+This project is [MIT](https://github.com/sergiocortessat/sergiocortessat/blob/main/LICENSE) licensed.
+
