@@ -10,7 +10,7 @@ const PodCastDetails: React.FC = () => {
   if (error) return <div>Error...</div>;
   const podcastUrl = `/podcast/${podcastId}`;
   return (
-    <div className="flex w-full h-8 justify-center items-start">
+    <div className="flex w-full flex-col sm:flex-row  items-center justify-center sm:items-start md:h-8">
       <SideCard podcastInfo={podcastInfo} podcastUrl={podcastUrl} />
       <Outlet />
     </div>

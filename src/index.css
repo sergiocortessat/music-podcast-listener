@@ -42,6 +42,14 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+.image-custom {
+  box-shadow: 0 8px 32px 0 rgba(85, 24, 87, 0.37);
+  backdrop-filter: blur(17.5px);
+  -webkit-backdrop-filter: blur(17.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
 @layer utilities {
   .animation-delay-200 {
     animation-delay: 0.2s;

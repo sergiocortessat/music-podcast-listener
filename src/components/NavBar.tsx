@@ -6,7 +6,7 @@ const NavBar = () => {
           className="ml-2 text-xl text-white hover:text-darkEmerald active:text-darkEmerald transition duration-500"
           href="/"
         >
-          Podcast
+          Top Podcasts
         </a>
       </div>
     </nav>

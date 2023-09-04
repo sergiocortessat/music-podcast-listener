@@ -10,7 +10,7 @@ const SideCard = ({ podcastUrl, podcastInfo }: SideCardProps) => {
     podcastDetails: { artworkUrl600, collectionName, artistName },
   } = podcastInfo;
   return (
-    <div className="podcast-details w-2/6 pt-2 pb-5 rounded-lg shadow-lg my-5 mx-20 glass card-custom">
+    <div className="podcast-details sm:w-2/6 pt-2 pb-5 rounded-lg shadow-lg my-5 mx-20 glass card-custom">
       <a href={podcastUrl}>
         <img
           src={artworkUrl600}

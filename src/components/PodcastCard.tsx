@@ -8,13 +8,14 @@ const PodcastCard = ({ podcast }: PodcastCardProps) => {
   const podcastId = podcast.id.attributes["im:id"];
   const podcastUrl = `/podcast/${podcastId}`;
   return (
-    <div className="h-96 w-1/4">
+    <div className="sm:h-96 sm:w-1/4 w-4/5">
       <a href={podcastUrl}>
         <div className="card w-full glass h-96 hover:bg-black transition duration-500 hover:shadow-gray-600 card-custom">
           <figure className="p-4">
             <img
               src={podcast["im:image"][2].label}
               alt={podcast["im:name"].label}
+              className="image-custom"
             />
           </figure>
           <div className="card-body">

@@ -19,7 +19,7 @@ const SearchInput = ({ onSearchTermChange }: SearchInputProps) => {
       placeholder="Search..."
       value={localSearchTerm}
       onChange={handleInputChange}
-      className="w-1/4 h-10 px-3 text-base placeholder-gray-600 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-purple-600 mx-10 placeholder:text-white"
+      className="sm:w-1/4 h-10 px-3 text-base placeholder-gray-600 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-purple-600 mx-10 placeholder:text-white"
     />
   );
 };
