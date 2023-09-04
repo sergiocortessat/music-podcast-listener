@@ -4,13 +4,14 @@ import PodcastCard from "../components/PodcastCard";
 import { useGetPodcastData } from "../hooks/useGetPodcastData";
 import useFilteredPodcasts from '../hooks/useFilteredPodcast'; // Import the hook
 import Loader from '../Loader';
+import Error from '../Error';
 
 const MainView: React.FC = () => {
   const { podcastTop, error, isLoading } = useGetPodcastData();
   const [searchTerm, setSearchTerm] = useState("");
   const filteredPodcasts = useFilteredPodcasts(podcastTop, searchTerm);
 
-  if (error) return <div>Failed to load</div>;
+  if (error) return <Error />;
   if (isLoading) return <Loader />;
 
   return (

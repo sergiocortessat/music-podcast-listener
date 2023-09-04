@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import useGetPodcastDetails from "../hooks/useGetPodcastDetails";
 import { useParams } from "react-router-dom";
 import Loading from "../Loader";
+import Error from "../Error";
 
 interface EpisodeDetails {
   trackId: number;
@@ -19,7 +20,7 @@ const EpisodeDetails: React.FC = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   if (isLoading) return <Loading />;
-  if (error) return <div>Error...</div>;
+  if (error) return <Error />;
 
   const {
     artworkUrl600,

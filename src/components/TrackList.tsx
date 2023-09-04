@@ -6,13 +6,14 @@ import {
 import { useNavigate } from "react-router-dom";
 import TransitionFrame from "../TransitionFrame";
 import Loader from "../Loader";
+import Error from "../Error";
 
 const TrackList = () => {
   const { podcastInfo, error, isLoading, podcastId } = useGetPodcastDetails();
   const navigate = useNavigate();
 
   if (isLoading) return <Loader />;
-  if (error) return <div>Error...</div>;
+  if (error) return <Error />;
 
   const handleClickDetails = (url: string) => {
     navigate(url);

@@ -19,7 +19,7 @@ const SideCard = ({ podcastUrl, podcastInfo }: SideCardProps) => {
         />
       </a>
       <div className="px-6 py-4">
-        <h1 className="text-2xl font-semibold mb-4">{collectionName}</h1>
+        <h2 className="text-xl font-semibold mb-4">{collectionName}</h2>
         <p className="text-white">By: {artistName}</p>
       </div>
     </div>
