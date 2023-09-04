@@ -1,22 +1,32 @@
-// import React from 'react';
-import { getTopPodcasts  } from '../services/api';
-import useSWR from 'swr'
-import { getFromLocalStorage, saveToLocalStorage } from '../helpers/storage';
-// import axios from 'axios'
+import { getTopPodcasts } from "../services/api";
+import useSWR from "swr";
+import { dynamicUpdateLocalStorage, getFromLocalStorage } from "../helpers/storage";
+import { PodcastData } from "../types/podcastTop";
 
-// const fetcher = (url: string) => axios.get(url).then(res => res.data)
+export const useGetPodcastData = (): PodcastData => {
+  const initialData = getFromLocalStorage("podcastTop");
+  const lastFetched = getFromLocalStorage("lastFetched");
+  const shouldFetch =
+    !initialData ||
+    new Date().getTime() - new Date(lastFetched).getTime() > 86400000;
+  const fetcher = shouldFetch ? getTopPodcasts : null;
 
-export const useGetPodcastData = () => {
-    const initialData = getFromLocalStorage('podcastTop');
-    const shouldFetch = !initialData;
-    const fetcher = shouldFetch ? getTopPodcasts : null;
-
-    const { data: podcastTop, error, isLoading } = useSWR('/us/rss/toppodcasts/limit=100/genre=1310/json', fetcher, { fallbackData: initialData });
-    // const { data, error, isLoading } = useSWR("http://localhost:3001", fetcher);
-    if (podcastTop && shouldFetch) {
-        saveToLocalStorage('podcastTop', podcastTop);
-    }
-    // const { data: podcastTop, error, isLoading } = useSWR('/us/rss/toppodcasts/limit=100/genre=1310/json', getTopPodcasts)
-    // console.log('data', initialData);
-    return ({podcastTop, error, isLoading})
-}
+  const {
+    data: podcastTop,
+    error,
+    isLoading,
+  } = useSWR("/us/rss/toppodcasts/limit=100/genre=1310/json", fetcher, {
+    fallbackData: initialData,
+  });
+  if (podcastTop && shouldFetch) {
+    dynamicUpdateLocalStorage({
+        shouldFetch: shouldFetch,
+        primaryStorageKey: "podcastTop",
+        lastFetchedKey: "lastFetched",
+        data: podcastTop,
+        currentTimestamp: new Date().toString()
+      });
+      
+  }
+  return { podcastTop, error, isLoading };
+};
